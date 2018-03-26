@@ -18,6 +18,17 @@ bot.on('message', msg => {
     console.log(command);
     
     let args = msg.content.split(" ").slice(1);
+  
+  
+  if (command === "help"){
+        var embedhelp = new Discord.RichEmbed()
+            .setTitle("Watch2Gether-Bot Commands")
+            .addField("!setlink [link]", "Speichert neuen Link.", true)
+            .addField("!link", "Gibt gespeicherten Link aus.", true)
+            .setColor([250, 206, 58])
+            .setThumbnail(bot.user.avatarURL)
+            msg.channel.sendEmbed(embedhelp); 
+    }
     
     if (command === "link") {
         
